@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#fswatch -e '\.git' -e '\.obsidian' -o -l 60 ~/Documents/obsidian-main | xargs -n 1 obsync
+watch -n60 obsync

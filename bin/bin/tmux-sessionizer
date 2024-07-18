@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# original from https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+
+# prune all search dirs down to ones that exist on this system
+allDirs=(~/code/experiments ~/code/personal ~/code/experiments ~/code ~/code/international/applications/addins/office ~/Document ~)
+existingDirs=()
+for d in ${allDirs[@]}; do
+  if [ -d $d ]; then
+    existingDirs+=( $d )
+  fi
+done
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$(find ${existingDirs[@]} -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $selected_name -c $selected
+    exit 0
+fi
+
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+fi
+
+tmux switch-client -t $selected_name
