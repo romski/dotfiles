@@ -15,6 +15,7 @@ brew bundle --file=- <<-EOS
   brew "ripgrep"
   brew "stow"
   brew "tmux"
+  tap "koekeishiya/formulae"
   brew "koekeishiya/formulae/skhd"
   brew "koekeishiya/formulae/yabai"
   brew "fd"
@@ -22,4 +23,9 @@ brew bundle --file=- <<-EOS
   brew "tpm"
   brew "fswatch"
   brew "watch"
+  brew "lazydocker"
+  brew "lazygit"
+  brew "awscli"
+  cask "font-jetbrains-mono-nerd-font"
+  cask "alacritty"
 EOS

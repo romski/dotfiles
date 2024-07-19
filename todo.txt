@@ -1,3 +1,4 @@
+install git
 install homebrew
 brew install --cask firefox
 brew install --cask alacritty
