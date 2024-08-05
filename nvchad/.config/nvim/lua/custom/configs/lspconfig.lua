@@ -19,6 +19,14 @@ lspconfig.zls.setup{}
 
 lspconfig.ocamllsp.setup{}
 
+local pid = vim.fn.getpid()
+local omnisharp_bin = "/Users/pnilsson/.local/share/nvim/mason/bin/omnisharp"
+
+lspconfig.omnisharp.setup{
+    cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) },
+    on_attach = on_attach,
+    filetypes = {"cs"},
+}
 lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
