@@ -5,27 +5,30 @@ vim.filetype.add({
 })
 
 require("nvim-treesitter.configs").setup({
-    ensure_installed = {
-        "c",
-        "css",
-        "dockerfile",
-        "embedded_template",
-        "go",
-        "graphql",
-        "html",
-        "javascript",
-        "jsdoc",
-        "json",
-        "lua",
-        "markdown",
-        "scss",
-        "toml",
-        "typescript",
-        "yaml",
-    },
-    highlight = {
-        enable = true,
-    }
+  ensure_installed = {
+    "c",
+    "css",
+    "dockerfile",
+    "embedded_template",
+    "go",
+    "graphql",
+    "html",
+    "javascript",
+    "jsdoc",
+    "json",
+    "lua",
+    "markdown",
+    "scss",
+    "toml",
+    "typescript",
+    "yaml",
+  },
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+  },
+
+  indent = { enable = true },
 });
 
 local plugins = {
