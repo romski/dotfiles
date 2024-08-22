@@ -19,6 +19,10 @@ lspconfig.zls.setup{}
 
 lspconfig.ocamllsp.setup{}
 
+lspconfig.csharp_ls.setup({
+  capabilities = capabilities,
+})
+
 lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
