@@ -26,6 +26,8 @@ brew bundle --file=- <<-EOS
   brew "lazydocker"
   brew "lazygit"
   brew "awscli"
+  brew "docker-compose"
   cask "font-jetbrains-mono-nerd-font"
   cask "alacritty"
+  cask "docker"
 EOS
