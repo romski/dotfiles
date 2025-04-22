@@ -16,3 +16,6 @@ style = "Italic"
 [font.normal]
 family = "JetbrainsMono Nerd Font"
 style = "Regular"
+
+[terminal]
+shell.program = "/opt/homebrew/bin/bash"
